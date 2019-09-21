@@ -4,3 +4,5 @@
 # Address blocks in CIDR notation
 127.0.0.0/8
 ::1/128
+193.191.177.6
+2a02:1811:2d1f:3200:a103:6bfe:5125:5f54
