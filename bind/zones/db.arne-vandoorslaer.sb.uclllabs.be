@@ -15,6 +15,6 @@ ns					IN	A	193.191.177.132
 www                                     IN      A       193.191.177.132
 www1                                    IN      A       193.191.177.132
 www2                                    IN      A       193.191.177.132
-test					IN	A	193.191.177.154
+test					IN	A	193.191.177.254
 secure                                  IN      A       193.191.177.132
 supersecure                             IN      A       193.191.177.132
