@@ -1,6 +1,6 @@
 $TTL    300
 @       IN      SOA     arne-vandoorslaer.sb.uclllabs.be. root.arne-vandoorslaer.sb.uclllabs.be. (
-                              1         ; Serial
+                              2         ; Serial
                             300         ; Refresh
                             300         ; Retry
                             300         ; Expire
