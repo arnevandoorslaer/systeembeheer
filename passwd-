@@ -27,4 +27,6 @@ uuidd:x:107:113::/run/uuidd:/usr/sbin/nologin
 check:x:1000:1000::/home/check:/bin/sh
 ntp:x:108:114::/nonexistent:/usr/sbin/nologin
 bind:x:109:115::/var/cache/bind:/usr/sbin/nologin
-mysql:x:110:116::/nonexistent:/bin/false
+mysql:x:110:116:MySQL Server,,,:/nonexistent:/bin/false
+dovecot:x:111:117:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
+dovenull:x:112:118::/nonexistent:/usr/sbin/nologin
