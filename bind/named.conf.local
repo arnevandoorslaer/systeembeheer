@@ -16,7 +16,7 @@ zone "arne-vandoorslaer.sb.uclllabs.be" {
 		193.191.177.138;
 		193.191.177.254; };
 };
-zone "bob-vandersmissen.sb.uclllabs.be"{
-	type slave;
-	masters {193.191.176.138;};
-}
+//zone "bob-vandersmissen.sb.uclllabs.be"{
+//	type slave;
+//	masters {193.191.176.138;};
+//};
