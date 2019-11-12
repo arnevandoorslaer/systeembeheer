@@ -1,3 +1,7 @@
 mrt/
 apparmor.d/
 rc*
+apache2/sites-*
+bind/
+!bind/zones/db.arne-vandoorslaer.sb.uclllabs.be
+!bind/named.conf.local
