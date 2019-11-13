@@ -5,18 +5,19 @@ if [ "$EUID" -ne 0 ]; then
 	exit
 fi
 
-mkdir "/var/www/html/$1"
+sub=$(echo $1 | grep -oP ".+(?=(\.arne-vandoorslaer))")
+
+mkdir "/var/www/html/$sub"
 mkdir "/var/log/apache2/$1"
 
-echo 	"<VirtualHost *:80>
-		ServerName $1
-		DocumentRoot "/var/www/html/$1"
-		ErrorLog "/var/log/apache2/$1"/error.log
-		CustomLog "/var/log/apache2/$1"/access.log combined
-	</VirtualHost>" > "/etc/apache2/sites-available/$1.conf"
+echo    "<VirtualHost *:80>
+               ServerName $1
+               DocumentRoot "/var/www/html/$sub"
+               ErrorLog "/var/log/apache2/$1"/error.log
+               CustomLog "/var/log/apache2/$1"/access.log combined
+       </VirtualHost>" > "/etc/apache2/sites-available/$sub.conf"
 
-sub=$(echo $1 | grep -oP ".+(?=(\.arne-vandoorslaer))")
-echo  "welcome $sub" > "/var/www/html/$1/index.html"
+echo  "welcome $sub" > "/var/www/html/$sub/index.html"
 
-a2ensite $1 > /dev/null
+a2ensite $sub > /dev/null
 systemctl reload apache2
