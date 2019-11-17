@@ -32,3 +32,5 @@ dovecot:x:111:117:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
 dovenull:x:112:118:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
 ftp:x:113:119:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
 mystery1_2014:x:1001:1001::/home/mystery1_2014:/bin/sh
+vmail:x:2222:2222:mail user:/var/vmail:/bin/sh
+radvd:x:114:65534::/var/run/radvd:/usr/sbin/nologin
