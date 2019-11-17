@@ -24,10 +24,11 @@ postfix:x:104:109::/var/spool/postfix:/usr/sbin/nologin
 _apt:x:105:65534::/nonexistent:/usr/sbin/nologin
 sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
 uuidd:x:107:113::/run/uuidd:/usr/sbin/nologin
-check:x:1000:1000::/home/check:/bin/sh
+check:x:1000:1000::/home/check:/bin/bash
 ntp:x:108:114::/nonexistent:/usr/sbin/nologin
 bind:x:109:115::/var/cache/bind:/usr/sbin/nologin
 mysql:x:110:116:MySQL Server,,,:/nonexistent:/bin/false
 dovecot:x:111:117:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
 dovenull:x:112:118:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
 ftp:x:113:119:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
+mystery1_2014:x:1001:1001::/home/mystery1_2014:/bin/sh
