@@ -12,9 +12,9 @@ mydate=`date +%Y%m%d`
 echo -e "\$TTL 300
 @	IN  SOA  ns.$domain.arne-vandoorslaer.sb.uclllabs.be.be. root.$domain.arne-vandoorslaer.sb.uclllabs.be.(
 					$mydate"1"	; Serial
-						300    	; Refresh
-						300  	; Retry
-						300 	; Expire
+					300    		; Refresh
+					300  		; Retry
+					300 		; Expire
 					300 )   	; Negative Cache TTL
 ;
 @		IN	NS	ns.$domain.arne-vandoorslaer.sb.uclllabs.be.

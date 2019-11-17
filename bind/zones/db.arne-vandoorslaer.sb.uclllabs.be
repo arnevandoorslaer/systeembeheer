@@ -1,6 +1,6 @@
 $TTL    300
 @       IN      SOA     ns.arne-vandoorslaer.sb.uclllabs.be. root.arne-vandoorslaer.sb.uclllabs.be. (
-			     20         ; Serial
+			     22         ; Serial
                             300         ; Refresh
                             300         ; Retry
                             300         ; Expire
@@ -24,3 +24,5 @@ mx					IN	A	193.191.177.132
 
 secure.arne-vandoorslaer.sb.uclllabs.be.      IN	CAA	0 issue "letsencrypt.org"
 supersecure.arne-vandoorslaer.sb.uclllabs.be. IN	CAA	0 issue "letsencrypt.org"
+hallo.arne-vandoorslaer.sb.uclllabs.be		IN	NS	ns.arne-vandoorslaer.sb.uclllabs.be.
+hallo		IN	NS	ns.arne-vandoorslaer.sb.uclllabs.be.
