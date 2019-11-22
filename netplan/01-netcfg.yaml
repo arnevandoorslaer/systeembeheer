@@ -1,0 +1,9 @@
+network:
+ version: 2
+ renderer: networkd
+ ethernets:
+  eth0:
+   dhcp4: no
+   dhcp6: no
+   addresses: [193.191.177.132/2,"2001:6a8:2880:a077::84/64"]
+   gateway6:  "2001:6a8:2880:a077::1"
