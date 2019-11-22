@@ -1,3 +1,7 @@
-user1@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/user1
-user2@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/user2
-check@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/check
+user1@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/user1/
+user2@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/user2/
+check@arne-vandoorslaer.sb.uclllabs.be	/var/vmail/check/
+user1@uclllabs.be  /var/vmail/user1/
+user2@uclllabs.be  /var/vmail/user2/
+check@uclllabs.be  /var/vmail/check/
+                                                           

@@ -9,36 +9,50 @@ append_dot_mydomain = no
 # Uncomment the next line to generate "delayed mail" warnings
 #delay_warning_time = 4h
 
-
-
-#TLS parameters
-smtpd_tls_cert_file=/etc/letsencrypt/live/secure.arne-vandoorslaer.sb.uclllabs.be/fullchain.pem
-smtpd_tls_key_file=/etc/letsencrypt/live/secure.arne-vandoorslaer.sb.uclllabs.be/privkey.pem
-smtpd_use_tls=yes
-smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
-smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
-
-smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
-myhostname = mx.arne-arnevandoorslaer.sb.uclllabs.be
-mydomain = arne-uclllabs.sb.uclllabs.be
-myorigin = $mydomain
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
-
 mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 193.191.177.0/24
 
-inet_protocols = all
+# TLS parameters
+smtpd_tls_cert_file=/etc/letsencrypt/live/secure.arne-vandoorslaer.sb.uclllabs.be/fullchain.pem
+smtpd_tls_key_file=/etc/letsencrypt/live/secure.arne-vandoorslaer.sb.uclllabs.be/privkey.pem
+smtpd_use_tls=yes
+smtpd_tls_auth_only = yes
+smtp_tls_security_level = may
+smtpd_tls_security_level = may
+smtpd_sasl_security_options = noanonymous, noplaintext
+smtpd_sasl_tls_security_options = noanonymous
+
+#inet_interfaces = loopback-only
 inet_interfaces = all
+inet_protocols = all
 recipient_delimiter = +
 
+#restrictions
+smtpd_relay_restrictions =
+        permit_mynetworks,
+        permit_sasl_authenticated,
+        defer_unauth_destination
 
+myorigin = arne-vandoorslaer.sb.uclllabs.be
+mydomain = arne-vandoorslaer.sb.uclllabs.be
+myhostname = mx.arne-vandoorslaer.sb.uclllabs.be
+relay_domains = localhost, arne-vandoorslaer.sb.uclllabs.be
 
-virtual_mailbox_maps=hash:/etc/postfix/vmail_mailbox
+# Authentication
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
 
+# Handing off local delivery to Dovecot's LMTP, and telling it where to store mail
 virtual_transport = lmtp:unix:private/dovecot-lmtp
 virtual_mailbox_base = /var/vmail
-virtual_minimum_uid = 2222
-virtual_uid_maps = static:2222
-virtual_gid_maps = static:2222
+
+# Virtual domains, users, and aliases
+virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
+virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
+virtual_alias_maps = mysql:/etc/postfix/mysql-virtual-mailbox-aliases.cf , mysql:/etc/postfix/mysql-virtual-email2email.cf
+
+
