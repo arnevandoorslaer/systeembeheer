@@ -1,19 +1,14 @@
-$TTL    30
+$TTL    300
 @       IN      SOA     ns.arne-vandoorslaer.sb.uclllabs.be. root.arne-vandoorslaer.sb.uclllabs.be. (
-			     83         ; Serial
-                             30         ; Refresh
-                             30         ; Retry
-                             30         ; Expire
-                             30 )       ; Negative Cache TTL
-; Name servers
+		       2020091755         ; Serial
+                              300         ; Refresh
+                              300         ; Retry
+                              300         ; Expire
+                              300 )       ; Negative Cache TTL
+; Name servers0
 @					IN	NS	ns.arne-vandoorslaer.sb.uclllabs.be.
 @					IN      NS      ns1.uclllabs.be.
 @				        IN      NS      ns2.uclllabs.be.
-@					IN	NS	ns2.he.net.
-@					IN	NS	ns3.he.net.
-@					IN	NS	ns4.he.net.
-@					IN	NS	ns5.he.net.
-
 
 
 ; A records
@@ -36,4 +31,6 @@ supersecure.arne-vandoorslaer.sb.uclllabs.be. IN	CAA	0 issue "letsencrypt.org"
 ns                                      IN      AAAA    2001:6a8:2880:a077::84
 @				        IN      AAAA    2001:6a8:2880:a077::84
 mx                                      IN      AAAA    2001:6a8:2880:a077::84
-www					IN	AAAA	2001:6a8:2880:a077::84
+ansible2                                IN      A       193.191.177.132
+ansible3                                     IN      A       193.191.177.132
+ansible4                                     IN      A       193.191.177.132
